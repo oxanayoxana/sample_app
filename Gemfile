@@ -47,6 +47,7 @@ group :development, :test do
   gem 'guard-minitest'
   gem 'minitest-reporters'
   gem 'mini_backtrace'
+  gem 'rails-controller-testing'
 end
 
 group :development do
