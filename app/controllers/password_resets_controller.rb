@@ -23,7 +23,7 @@ class PasswordResetsController < ApplicationController
   def edit
   end
 
-def update
+  def update
     if params[:user][:password].empty?                  # Case (3)
       @user.errors.add(:password, "can't be empty")
       render 'edit'
@@ -36,12 +36,11 @@ def update
     end
   end
 
-    private
+  private
 
     def user_params
       params.require(:user).permit(:password, :password_confirmation)
     end
-
 
     def get_user
       @user = User.find_by(email: params[:email])
@@ -62,5 +61,4 @@ def update
         redirect_to new_password_reset_url
       end
     end
-
 end
